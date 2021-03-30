@@ -20,22 +20,22 @@ class index extends Component {
 
             <div className="DetailTransferCard mt-5">
               <div className="DetailTransferHeader">Amount</div>
-              <div className="DetailTransferFill">Rp {rupiah(this.props.transaction.results.amount)}</div>
+              <div className="DetailTransferFill">Rp {rupiah(this.props.transaction.confirmation.amount)}</div>
             </div>
             <div className="DetailTransferCard">
               <div className="DetailTransferHeader">Balance Left</div>
-              <div className="DetailTransferFill">Rp {rupiah(this.props.transaction.results.balance)}</div>
+              <div className="DetailTransferFill">Rp {rupiah(this.props.transaction.confirmation.balance)}</div>
             </div>
             <div className="DetailTransferCard">
               <div className="DetailTransferHeader">Date & Time</div>
-              <div className="DetailTransferFill"><Moment format="MMMM DD, YYYY - hh:mm">{this.props.transaction.results.dateTransasction}</Moment></div>
+              <div className="DetailTransferFill"><Moment format="MMMM DD, YYYY - hh:mm">{this.props.transaction.confirmation.dateTransasction}</Moment></div>
             </div>
             <div className="DetailTransferCard">
               <div className="DetailTransferHeader">Notes</div>
-              <div className="DetailTransferFill">{this.props.transaction.results.notes}</div>
+              <div className="DetailTransferFill">{this.props.transaction.confirmation.note}</div>
             </div>
             <div className="DetailTransfer mt-4">Transfer To</div>
-            <CardContact data={this.props.transaction.results.receiver[0]} />
+            <CardContact data={this.props.transaction.confirmation.name} />
             <div className="mt-5">
               <SuccessButton />
             </div>
