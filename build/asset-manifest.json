@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.82ba1552.chunk.css",
+    "main.js": "/static/js/main.5bd7521c.chunk.js",
+    "main.js.map": "/static/js/main.5bd7521c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e14abec7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e14abec7.js.map",
+    "static/js/2.bf8a32cf.chunk.js": "/static/js/2.bf8a32cf.chunk.js",
+    "static/js/2.bf8a32cf.chunk.js.map": "/static/js/2.bf8a32cf.chunk.js.map",
+    "static/js/3.2fe9a6c6.chunk.js": "/static/js/3.2fe9a6c6.chunk.js",
+    "static/js/3.2fe9a6c6.chunk.js.map": "/static/js/3.2fe9a6c6.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.82ba1552.chunk.css.map": "/static/css/main.82ba1552.chunk.css.map",
+    "static/js/2.bf8a32cf.chunk.js.LICENSE.txt": "/static/js/2.bf8a32cf.chunk.js.LICENSE.txt",
+    "static/media/Fototestimoni2.92f3f3e6.png": "/static/media/Fototestimoni2.92f3f3e6.png",
+    "static/media/LandingFeatures.bbf45672.png": "/static/media/LandingFeatures.bbf45672.png",
+    "static/media/Logo.fc5aed92.png": "/static/media/Logo.fc5aed92.png",
+    "static/media/Jumbotron.css": "/static/media/Mask Group.b0e71618.png",
+    "static/media/abusayap_primary_logo.50656890.png": "/static/media/abusayap_primary_logo.50656890.png",
+    "static/media/abusayap_white_logo.fc5aed92.png": "/static/media/abusayap_white_logo.fc5aed92.png",
+    "static/media/phone.f12cb638.png": "/static/media/phone.f12cb638.png",
+    "static/media/screen_app_double.52bcb6ac.png": "/static/media/screen_app_double.52bcb6ac.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e14abec7.js",
+    "static/js/2.bf8a32cf.chunk.js",
+    "static/css/main.82ba1552.chunk.css",
+    "static/js/main.5bd7521c.chunk.js"
+  ]
+}
