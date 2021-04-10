@@ -101,6 +101,7 @@ class topup extends Component {
                     />
                     <ErrorMessage name="amount" component="div" className='error-text' />
                     <p className="title">Input Picture</p>
+                    <small className="text-muted">*input proof of transfer</small>
                     <input id="picture" name="picture" type="file" onChange={(event) => {
                       setFieldValue('picture', event.currentTarget.files[0])
                     }} className="form-control" onBlur={handleBlur} />
@@ -184,7 +185,7 @@ class topup extends Component {
                 <div className="TopUpCard">
                   <div className="TopUpList">
                     <span>8</span>
-                  You can see your money in Abusayap within 3 hours.
+                    Submit proof of transfer on the top up form
                 </div>
                 </div>
               </Col>
