@@ -8,7 +8,7 @@ const FormSearch = (props) => {
     <div className={div}>
       <Form.Group className={group}>
       <Form.Control
-        className="shadow-none"
+        className="shadow-none vw-100"
         name={name}
         type={type}
         placeholder={placeholder}

@@ -3,7 +3,7 @@ import CreatePin from '../container/CreatePin'
 
 const CreatePinPage = (props) => {
   return (
-    <CreatePin id={props.match.params.id} />
+    <CreatePin token={props.match.params.token} />
   )
 }
 

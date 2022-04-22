@@ -24,7 +24,7 @@ class Profile extends Component {
     ]
     const { token, user } = this.props.auth
 
-    console.log(SUPPORTED_FORMATS.indexOf(value.type))
+    console.log(SUPPORTED_FORMATS.indexOf(value.type), 'ini coba')
     if (FILE_SIZE < value.size) {
       console.log('File to large')
       await this.setState({ message: 'File to large' })

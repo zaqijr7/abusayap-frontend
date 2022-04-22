@@ -1,10 +1,10 @@
 const initialState = {
   results: null,
   amountTransaction: null,
-  transactionHistory: null,
+  transactionHistory: [],
   receiver: null,
   confirmation: null,
-  pageInfo: null,
+  pageInfo: {},
   errorMsg: ''
 }
 
@@ -62,7 +62,9 @@ const transactionReducer = (state = initialState, action) => {
     case 'SET_TRANSACTION_MESSAGE': {
       return {
         ...state,
-        errorMsg: action.payload
+        errorMsg: action.payload,
+        transactionHistory: [],
+        pageInfo: {}
       }
     }
     default: {

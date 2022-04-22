@@ -16,8 +16,10 @@ class PinSuccess extends Component {
         </Col>
         <Col md={5} className="p-5">
           <Container>
-            <Image src={successLogo} width={70}/>
-            <p className="text-display-xs-bold py-4">{this.props.auth.message}</p>
+            <div className='d-flex justify-content-center align-items-center'>
+              <Image src={successLogo} width={70}/>
+            </div>
+            <p className="text-display-xs-bold py-4 text-center">{this.props.auth.message}</p>
             <p className="pb-5">
               Your PIN was successfully created and you can now access all the features in Abusayap. Login to your new account and start exploring!</p>
 

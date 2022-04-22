@@ -55,7 +55,7 @@ export const signUp = (username, email, password) => {
   }
 }
 
-export const createPin = (id, pin) => {
+export const createPin = (token, pin) => {
   return async dispatch => {
     const params = new URLSearchParams()
     params.append('pin', pin)
@@ -64,7 +64,7 @@ export const createPin = (id, pin) => {
         type: 'SET_AUTH_MESSAGE',
         payload: ''
       })
-      const results = await http().patch(`auth/pin/${id}`, params)
+      const results = await http().patch(`auth/pin/${token}`, params)
       dispatch({
         type: 'CREATE_PIN',
         payload: results.data.message
@@ -166,7 +166,7 @@ export const updateUser = (token, id, data) => {
         type: 'UPDATE_USER',
         message: ''
       })
-      const results = await http(token).patch(`user/${id}`, params)
+      const results = await http(token).put(`user/edit/${id}`, params)
       dispatch({
         type: 'UPDATE_USER',
         payload: results.data.results,

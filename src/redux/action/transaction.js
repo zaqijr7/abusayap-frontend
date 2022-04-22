@@ -116,8 +116,9 @@ export const transactionHistoryNew = (token, cond) => {
         pageInfo: response.data.pageInfo
       })
     } catch (err) {
-      console.log(err)
+      console.log(err, 'TEST catch')
       const { message } = err.response.data
+      console.log(message)
       dispatch({
         type: 'SET_TRANSACTION_MESSAGE',
         payload: message

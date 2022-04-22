@@ -8,7 +8,7 @@ export const detailUser = (token, id) => {
         type: 'SET_USER_MESSAGE',
         payload: ''
       })
-      const response = await http(token).get(`user/${id}`)
+      const response = await http(token).get(`user/get/${id}`)
       dispatch({
         type: 'DETAIL_USER',
         payload: response.data.results
@@ -82,7 +82,7 @@ export const editUserInfo = (token, id, firstname, lastname, email) => {
       data.append('lastname', lastname)
       // data.append('balance', balance)
       data.append('email', email)
-      const response = await http(token).patch(`user/${id}`, data)
+      const response = await http(token).patch(`user/get/edit/${id}`, data)
       dispatch({
         type: 'EDIT_USER_INFO',
         payload: response.data.results

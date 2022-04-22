@@ -97,38 +97,47 @@ class TransactionHistory extends Component {
     const { pageInfo } = this.props.transaction
     return (
       <Card className="card-menu border-0">
-        <Card.Body>
-          <p className="text-display-xs-bold-18">Transaction History <i className={`fa fa-sort-${this.state.icSort}`} style={{ cursor: 'pointer' }} onClick={() => { this.order('dateTransaction') }} /></p>
-          <Form className="my-3">
-            <FormSearch group="searchIcon" type="text" name="search" onChange={(event) => this.changeText(event)} placeholder="Search receiver here" className="ContactInputSearch">
-              <i className="fa fa-search" aria-hidden="true"></i>
-            </FormSearch>
-          </Form>
-          <div id="scrollmenu">
-            {this.props.transaction.transactionHistory && this.state.isLoading !== true
-              ? this.props.transaction.transactionHistory.map((item) => {
-                return (
-                  <div key={item.id}>
-                    <div className="d-flex justify-content-between pt-3">
-                      <div className="d-flex justify-content-center align-content-center">
-                        <Image src={item.picture ? `${API_URL}upload/profile/${item.picture}` : defaultProfile} width={56} height={56} className="img-avatar mr-3" />
-                        <div>
-                          <p className="text-display-xs-bold-16 mb-2">{item.name}</p>
-                          <p className="text-link-xs text-color-label">{item.status}</p>
+        <Card.Body className='d-flex flex-column align-content-stretch'>
+          <div className=''>
+            <p className="text-display-xs-bold-18">Transaction History <i className={`fa fa-sort-${this.state.icSort}`} style={{ cursor: 'pointer' }} onClick={() => { this.order('dateTransaction') }} /></p>
+            <Form className="my-3">
+              <FormSearch group="searchIcon" type="text" name="search" onChange={(event) => this.changeText(event)} placeholder="Search receiver here" className="ContactInputSearch">
+                <i className="fa fa-search" aria-hidden="true"></i>
+              </FormSearch>
+            </Form>
+          </div>
+          <div className={`d-flex flex-column flex-grow-1 ${!this.props.transaction.transactionHistory.length && 'justify-content-center align-items-center'}`}>
+            {
+              !this.props.transaction.transactionHistory.length
+                ? <p className='text-dark'>No Have Transaction</p>
+                : <>
+                {this.props.transaction.transactionHistory && this.state.isLoading !== true
+                  ? this.props.transaction.transactionHistory.map((item) => {
+                    return (
+                      <div key={item.id} className=''>
+                        <div className="d-flex justify-content-between pt-3">
+                          <div className="d-flex justify-content-center align-content-center">
+                            <Image src={item.picture ? `${API_URL}upload/profile/${item.picture}` : defaultProfile} width={56} height={56} className="img-avatar mr-3" />
+                            <div>
+                              <p className="text-display-xs-bold-16 mb-2">{item.name}</p>
+                              <p className="text-link-xs text-color-label">{item.status}</p>
+                            </div>
+                          </div>
+                          <p className={`text-right ${item.userAs === 'sender' ? 'text-danger' : 'text-primary'} text-display-xs-bold-16`}>
+                            {item.userAs === 'sender' ? '-' : '+'}Rp {rupiah(item.amount)}
+                          </p>
                         </div>
                       </div>
-                      <p className={`text-right ${item.userAs === 'sender' ? 'text-danger' : 'text-primary'} text-display-xs-bold-16`}>
-                        {item.userAs === 'sender' ? '-' : '+'}Rp {rupiah(item.amount)}
-                      </p>
-                    </div>
-                  </div>
-                )
-              })
-              : this.state.message ? this.state.message : this.props.transaction.transactionHistory === undefined ? 'Not Transaction' : <div className="text-center"><Spinner animation="border" variant="success" /></div>}
+                    )
+                  })
+                  : <div className="text-center"><Spinner animation="border" variant="success" /></div>
+                  }
+              </>
+            }
           </div>
           <div className="d-flex justify-content-between align-items-center">
             <div className="text-300-12">
-              {`Total data ${this.props.transaction.transactionHistory ? this.props.transaction.pageInfo.totalData : '0'}`}
+              {`Total data ${this.props.transaction.transactionHistory.length ? this.props.transaction.pageInfo.totalData : '0'}`}
             </div>
             <div>
               <Button className="btn outline-primary mr-3" onClick={this.prev}
@@ -139,7 +148,7 @@ class TransactionHistory extends Component {
               >Next Link</Button>
             </div>
             <div className="text-300-12">
-              {`Current Page ${pageInfo.currentPage} Total Page ${this.props.transaction.transactionHistory ? this.props.transaction.pageInfo.totalPage : '0'}`}
+              {`Current Page ${this.props.transaction.transactionHistory.length ? pageInfo.currentPage : '0'} Total Page ${this.props.transaction.transactionHistory.length ? this.props.transaction.pageInfo.totalPage : '0'}`}
             </div>
           </div>
         </Card.Body>

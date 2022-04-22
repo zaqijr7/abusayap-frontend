@@ -20,7 +20,7 @@ class CreatePin extends Component {
   submitData = async (event) => {
     event.preventDefault()
     this.setState({ isLoading: true })
-    await this.props.createPin(this.props.id, Number(this.state.pin))
+    await this.props.createPin(this.props.token, Number(this.state.pin))
     if (this.props.auth.errorMsg === '') {
       this.setState({ isLoading: false })
       this.props.history.push('/pin-success')
